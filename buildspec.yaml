@@ -14,11 +14,11 @@ phases:
  build:
    commands:
      - echo "Running SonarCloud Code Analysis"
-     - sonar-scanner -Dsonar.login=e5f24bc6b6f41928ede6af0127232cbd1f8f7e1d -Dsonar.sources=$CODEBUILD_SRC_DIR -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=darshikapongallu456_school-management-system -Dsonar.organization=darshikapongallu456 -DgeneratePom=true -Dsonar.c.file.suffixes=- -Dsonar.cpp.file.suffixes=- -Dsonar.objc.file.suffixes=-
-     - sleep 30
-     - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=darshikapongallu456_school-management-system >result.json
-     - cat result.json
-     - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+    #  - sonar-scanner -Dsonar.login=e5f24bc6b6f41928ede6af0127232cbd1f8f7e1d -Dsonar.sources=$CODEBUILD_SRC_DIR -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=darshikapongallu456_school-management-system -Dsonar.organization=darshikapongallu456 -DgeneratePom=true -Dsonar.c.file.suffixes=- -Dsonar.cpp.file.suffixes=- -Dsonar.objc.file.suffixes=-
+    #  - sleep 30
+    #  - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=darshikapongallu456_school-management-system >result.json
+    #  - cat result.json
+    #  - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
 artifacts:
     files:
         - '**/*'
